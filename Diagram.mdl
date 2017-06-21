@@ -1,0 +1,3463 @@
+
+(object Petal
+    version    	50
+    _written   	"Rose 2006.0.0.060314"
+    charSet    	204)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"5947E7090139"
+    enforceClosureAutoLoad 	FALSE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	FALSE
+	gridX      	0
+	gridY      	0
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    charSet    	204
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	3
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"5947E709013B"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list
+	    (object Class "User"
+		quid       	"5947E73E026F"
+		stereotype 	"Actor")
+	    (object UseCase "User interfice"
+		quid       	"5947E7190352"
+		visible_modules 	(list dependency_list
+		    (object Dependency_Relationship
+			quid       	"5949A74F02C3"
+			supplier   	"Use Case View::Stop game"
+			quidu      	"5949A725024B")
+		    (object Dependency_Relationship
+			quid       	"5949A752006A"
+			supplier   	"Use Case View::Pause game"
+			quidu      	"5949A72C02B0")
+		    (object Dependency_Relationship
+			quid       	"5949A7540339"
+			supplier   	"Use Case View::Start game"
+			quidu      	"5949A7360224")
+		    (object Dependency_Relationship
+			quid       	"5949A75702EF"
+			supplier   	"Use Case View::View statistic"
+			quidu      	"5949A73E0142")))
+	    (object UseCase "Stop game"
+		quid       	"5949A725024B")
+	    (object UseCase "Pause game"
+		quid       	"5949A72C02B0")
+	    (object UseCase "Start game"
+		quid       	"5949A7360224")
+	    (object UseCase "View statistic"
+		quid       	"5949A73E0142")
+	    (object Association "$UNNAMED$0"
+		quid       	"5947E7D100DD"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$1"
+			quid       	"5947E7D103A4"
+			supplier   	"Use Case View::User interfice"
+			quidu      	"5947E7190352"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$2"
+			quid       	"5947E7D103A6"
+			supplier   	"Use Case View::User"
+			quidu      	"5947E73E026F")))
+	    (object Class_Category "Squince diagram"
+		quid       	"5947E8BB001C"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Mechanism @1
+			logical_models 	(list unit_reference_list
+			    (object Object "$UNNAMED$3"
+				quid       	"5947E8E70287"
+				collaborators 	(list link_list
+				    (object Link
+					quid       	"5947EA1D01DB"
+					supplier   	"User interface"
+					quidu      	"5947E919014D"
+					messages   	(list Messages
+					    (object Message "Button pressed \"stop game\""
+						quid       	"5947EA6901A1"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"4"
+						ordinal    	3
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Button pressed \"Start game\""
+						quid       	"5947EB120364"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"8"
+						ordinal    	7
+						quidu      	"000000000000"
+						creation   	FALSE)))
+				    (object Link
+					quid       	"5947E9A003D7"
+					supplier   	"Program"
+					quidu      	"5947E92200AB"
+					messages   	(list Messages
+					    (object Message "Run program"
+						quid       	"5947E9A003D8"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"1"
+						ordinal    	0
+						quidu      	"000000000000"
+						creation   	FALSE))))
+				class      	"Use Case View::User"
+				quidu      	"5947E73E026F"
+				persistence 	"Transient"
+				creationObj 	FALSE
+				multi      	FALSE)
+			    (object Object "User interface"
+				quid       	"5947E919014D"
+				persistence 	"Transient"
+				creationObj 	FALSE
+				multi      	FALSE)
+			    (object Object "Program"
+				quid       	"5947E92200AB"
+				collaborators 	(list link_list
+				    (object Link
+					quid       	"5947E9B30378"
+					supplier   	"User interface"
+					quidu      	"5947E919014D"
+					messages   	(list Messages
+					    (object Message "Displaying menu"
+						quid       	"5947E9B30379"
+						frequency  	"Aperiodic"
+						synchronization 	"Return"
+						dir        	"FromClientToSupplier"
+						sequence   	"3"
+						ordinal    	2
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Sending a command to stop the program"
+						quid       	"5947EAB5039A"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"ToClientFromSupplier"
+						sequence   	"5"
+						ordinal    	4
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Sending a command to start game"
+						quid       	"5947ECFA0000"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"ToClientFromSupplier"
+						sequence   	"9"
+						ordinal    	8
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Displaying the player's field and the opponent's field"
+						quid       	"5947ED540361"
+						frequency  	"Aperiodic"
+						synchronization 	"Return"
+						dir        	"FromClientToSupplier"
+						sequence   	"11"
+						ordinal    	10
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Displaying field for inputting coordinates"
+						quid       	"5947ED6E02A9"
+						frequency  	"Aperiodic"
+						synchronization 	"Return"
+						dir        	"FromClientToSupplier"
+						sequence   	"12"
+						ordinal    	11
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Displaing button \"Pause\""
+						quid       	"5947EDC50070"
+						frequency  	"Aperiodic"
+						synchronization 	"Return"
+						dir        	"FromClientToSupplier"
+						sequence   	"13"
+						ordinal    	12
+						quidu      	"000000000000"
+						creation   	FALSE)))
+				    (object Link
+					quid       	"5947E9FD0082"
+					supplier   	"Program"
+					quidu      	"5947E92200AB"
+					messages   	(list Messages
+					    (object Message "Running the program"
+						quid       	"5947E9FD0083"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"2"
+						ordinal    	1
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Processing request"
+						quid       	"5947EABE037D"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"6"
+						ordinal    	5
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Close console window and stop working program"
+						quid       	"5947EAE1010B"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"7"
+						ordinal    	6
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Processing request"
+						quid       	"5947ED120266"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"10"
+						ordinal    	9
+						quidu      	"000000000000"
+						creation   	FALSE))))
+				persistence 	"Transient"
+				creationObj 	TRUE
+				multi      	FALSE)))
+		    (object Mechanism @2
+			logical_models 	(list unit_reference_list
+			    (object Object "$UNNAMED$4"
+				quid       	"5947EE580269"
+				collaborators 	(list link_list
+				    (object Link
+					quid       	"5947EE6802C1"
+					supplier   	"User interface"
+					quidu      	"5947EE630235"
+					messages   	(list Messages
+					    (object Message "Press button \"Pause\""
+						quid       	"5947EE6802C2"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"1"
+						ordinal    	0
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Press button \"Stop pause\""
+						quid       	"5947F0DD0017"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"7"
+						ordinal    	6
+						quidu      	"000000000000"
+						creation   	FALSE))))
+				class      	"Use Case View::User"
+				quidu      	"5947E73E026F"
+				persistence 	"Transient"
+				creationObj 	FALSE
+				multi      	FALSE)
+			    (object Object "User interface"
+				quid       	"5947EE630235"
+				collaborators 	(list link_list
+				    (object Link
+					quid       	"5947EE860008"
+					supplier   	"Program"
+					quidu      	"5947EE630237"
+					messages   	(list Messages
+					    (object Message "Sending command to pause"
+						quid       	"5947EE860009"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"2"
+						ordinal    	1
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Displaying timer"
+						quid       	"5947EEC302B6"
+						frequency  	"Aperiodic"
+						synchronization 	"Return"
+						dir        	"ToClientFromSupplier"
+						sequence   	"5"
+						ordinal    	4
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Displaing button \"Stop pause\""
+						quid       	"5947F082035F"
+						frequency  	"Aperiodic"
+						synchronization 	"Return"
+						dir        	"ToClientFromSupplier"
+						sequence   	"6"
+						ordinal    	5
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Sending command to stop pause"
+						quid       	"5947F0F6022F"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"8"
+						ordinal    	7
+						quidu      	"000000000000"
+						creation   	FALSE))))
+				persistence 	"Transient"
+				creationObj 	FALSE
+				multi      	FALSE)
+			    (object Object "Program"
+				quid       	"5947EE630237"
+				collaborators 	(list link_list
+				    (object Link
+					quid       	"5947EEBA03C0"
+					supplier   	"Program"
+					quidu      	"5947EE630237"
+					messages   	(list Messages
+					    (object Message "Processing request"
+						quid       	"5947EEBA03C1"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"3"
+						ordinal    	2
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Calculate time"
+						quid       	"5947EEDA0348"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"4"
+						ordinal    	3
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Stop pause and ñontinuation of the game"
+						quid       	"5947F112023A"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"9"
+						ordinal    	8
+						quidu      	"000000000000"
+						creation   	FALSE))))
+				persistence 	"Transient"
+				creationObj 	FALSE
+				multi      	FALSE)))
+		    (object Mechanism @3
+			logical_models 	(list unit_reference_list
+			    (object Object "$UNNAMED$5"
+				quid       	"5947F3480168"
+				collaborators 	(list link_list
+				    (object Link
+					quid       	"5947F3480169"
+					supplier   	"User interface"
+					quidu      	"5947F3480183"
+					messages   	(list Messages
+					    (object Message "Inputing coordinate "
+						quid       	"5947F348016C"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"1"
+						ordinal    	0
+						quidu      	"000000000000"
+						creation   	FALSE)))
+				    (object Link
+					quid       	"5947F348016D"
+					supplier   	"Program"
+					quidu      	"5947F3480171"))
+				class      	"Use Case View::User"
+				quidu      	"5947E73E026F"
+				persistence 	"Transient"
+				creationObj 	FALSE
+				multi      	FALSE)
+			    (object Object "User interface"
+				quid       	"5947F3480183"
+				persistence 	"Transient"
+				creationObj 	FALSE
+				multi      	FALSE)
+			    (object Object "Program"
+				quid       	"5947F3480171"
+				collaborators 	(list link_list
+				    (object Link
+					quid       	"5947F3480172"
+					supplier   	"User interface"
+					quidu      	"5947F3480183"
+					messages   	(list Messages
+					    (object Message "Sending command to end move"
+						quid       	"5947F3480179"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"ToClientFromSupplier"
+						sequence   	"2"
+						ordinal    	1
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Displaying the result on the field"
+						quid       	"5947F348017A"
+						frequency  	"Aperiodic"
+						synchronization 	"Return"
+						dir        	"FromClientToSupplier"
+						sequence   	"4"
+						ordinal    	3
+						quidu      	"000000000000"
+						creation   	FALSE)))
+				    (object Link
+					quid       	"5947F348017B"
+					supplier   	"Program"
+					quidu      	"5947F3480171"
+					messages   	(list Messages
+					    (object Message "Coordinate processing"
+						quid       	"5947F3480180"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"3"
+						ordinal    	2
+						quidu      	"000000000000"
+						creation   	FALSE))))
+				persistence 	"Transient"
+				creationObj 	FALSE
+				multi      	FALSE))))
+		logical_presentations 	(list unit_reference_list
+		    (object InteractionDiagram "Diagramm"
+			mechanism_ref 	@1
+			quid       	"5947E8D303A6"
+			title      	"Diagramm"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	2451
+			items      	(list diagram_item_list
+			    (object InterObjView "$UNNAMED$3" @4
+				location   	(180, 225)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	TRUE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@4
+				    location   	(180, 250)
+				    anchor_loc 	1
+				    nlines     	2
+				    max_width  	360
+				    justify    	0
+				    label      	"")
+				icon       	"Actor"
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5947E8E70287"
+				width      	120
+				height     	1494
+				icon_height 	162
+				icon_width 	120
+				icon_y_offset 	0
+				annotation 	1
+				Focus_Of_Control 	(object Focus_Of_Control "" @5
+				    location   	(180, 372)
+				    line_color 	3342489
+				    InterObjView 	@4
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @6
+				    location   	(180, 867)
+				    line_color 	3342489
+				    InterObjView 	@4
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @7
+				    location   	(180, 1569)
+				    line_color 	3342489
+				    InterObjView 	@4
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE))
+			    (object InterObjView "User interface" @8
+				location   	(540, 225)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	TRUE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@8
+				    location   	(540, 225)
+				    fill_color 	13434879
+				    anchor_loc 	1
+				    nlines     	2
+				    max_width  	282
+				    justify    	0
+				    label      	"User interface")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5947E919014D"
+				width      	300
+				height     	2425
+				icon_height 	0
+				icon_width 	0
+				icon_y_offset 	0
+				annotation 	1
+				Focus_Of_Control 	(object Focus_Of_Control "" @9
+				    location   	(540, 720)
+				    line_color 	3342489
+				    InterObjView 	@8
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @10
+				    location   	(540, 867)
+				    line_color 	3342489
+				    InterObjView 	@8
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @11
+				    location   	(540, 994)
+				    line_color 	3342489
+				    InterObjView 	@8
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @12
+				    location   	(540, 1569)
+				    line_color 	3342489
+				    InterObjView 	@8
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @13
+				    location   	(540, 1775)
+				    line_color 	3342489
+				    InterObjView 	@8
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @14
+				    location   	(540, 2147)
+				    line_color 	3342489
+				    InterObjView 	@8
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @15
+				    location   	(540, 2326)
+				    line_color 	3342489
+				    InterObjView 	@8
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @16
+				    location   	(540, 2500)
+				    line_color 	3342489
+				    InterObjView 	@8
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE))
+			    (object InterObjView "Program" @17
+				location   	(900, 228)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	TRUE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@17
+				    location   	(900, 228)
+				    fill_color 	13434879
+				    anchor_loc 	1
+				    nlines     	2
+				    max_width  	282
+				    justify    	0
+				    label      	"Program")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5947E92200AB"
+				width      	300
+				height     	2422
+				icon_height 	0
+				icon_width 	0
+				icon_y_offset 	0
+				annotation 	1
+				Focus_Of_Control 	(object Focus_Of_Control "" @18
+				    location   	(900, 308)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	124
+				    y_coord    	34
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @19
+				    location   	(900, 372)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	TRUE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @20
+				    location   	(900, 535)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @21
+				    location   	(900, 560)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	TRUE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @22
+				    location   	(900, 720)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @23
+				    location   	(900, 994)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @24
+				    location   	(900, 1219)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @25
+				    location   	(900, 1244)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	TRUE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @26
+				    location   	(900, 1409)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @27
+				    location   	(900, 1434)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	TRUE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @28
+				    location   	(900, 1775)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @29
+				    location   	(900, 1930)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @30
+				    location   	(900, 1955)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	TRUE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @31
+				    location   	(900, 2147)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @32
+				    location   	(900, 2326)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @33
+				    location   	(900, 2500)
+				    line_color 	3342489
+				    InterObjView 	@17
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE))
+			    (object InterMessView "Run program" @34
+				location   	(0, 372)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @35
+				    Parent_View 	@34
+				    location   	(539, 328)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947E9A003D8"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	291
+				    justify    	0
+				    label      	"Run program"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@4
+				supplier   	@17
+				Focus_Src  	@5
+				Focus_Entry 	@19
+				origin     	(195, 372)
+				terminus   	(884, 372)
+				ordinal    	0)
+			    (object InterMessView "Displaying menu" @36
+				location   	(0, 720)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @37
+				    Parent_View 	@36
+				    location   	(720, 676)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947E9B30379"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	357
+				    justify    	0
+				    label      	"Displaying menu"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	1)
+				line_color 	3342489
+				client     	@17
+				supplier   	@8
+				Focus_Src  	@22
+				Focus_Entry 	@9
+				origin     	(884, 720)
+				terminus   	(556, 720)
+				ordinal    	2)
+			    (object SelfMessView "Running the program" @38
+				location   	(0, 535)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @39
+				    Parent_View 	@38
+				    location   	(991, 491)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947E9FD0083"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	437
+				    justify    	0
+				    label      	"Running the program"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@17
+				supplier   	@17
+				Focus_Src  	@20
+				Focus_Entry 	@21
+				origin     	(916, 535)
+				terminus   	(1066, 535)
+				ordinal    	1)
+			    (object InterMessView "Button pressed \"stop game\"" @40
+				location   	(0, 867)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @41
+				    Parent_View 	@40
+				    location   	(359, 823)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EA6901A1"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	573
+				    justify    	0
+				    label      	
+|Button pressed "stop game"
+				    
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@4
+				supplier   	@8
+				Focus_Src  	@6
+				Focus_Entry 	@10
+				origin     	(195, 867)
+				terminus   	(524, 867)
+				ordinal    	3)
+			    (object InterMessView "Sending a command to stop the program" @42
+				location   	(0, 994)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @43
+				    Parent_View 	@42
+				    location   	(719, 950)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EAB5039A"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	801
+				    justify    	0
+				    label      	"Sending a command to stop the program"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@8
+				supplier   	@17
+				Focus_Src  	@11
+				Focus_Entry 	@23
+				origin     	(555, 994)
+				terminus   	(884, 994)
+				ordinal    	4)
+			    (object SelfMessView "Processing request" @44
+				location   	(0, 1219)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @45
+				    Parent_View 	@44
+				    location   	(991, 1175)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EABE037D"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	410
+				    justify    	0
+				    label      	"Processing request"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@17
+				supplier   	@17
+				Focus_Src  	@24
+				Focus_Entry 	@25
+				origin     	(916, 1219)
+				terminus   	(1066, 1219)
+				ordinal    	5)
+			    (object SelfMessView "Close console window and stop working program" @46
+				location   	(0, 1409)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @47
+				    Parent_View 	@46
+				    location   	(991, 1365)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EAE1010B"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	951
+				    justify    	0
+				    label      	"Close console window and stop working program"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@17
+				supplier   	@17
+				Focus_Src  	@26
+				Focus_Entry 	@27
+				origin     	(916, 1409)
+				terminus   	(1066, 1409)
+				ordinal    	6)
+			    (object InterMessView "Button pressed \"Start game\"" @48
+				location   	(0, 1569)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @49
+				    Parent_View 	@48
+				    location   	(359, 1525)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EB120364"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	582
+				    justify    	0
+				    label      	
+|Button pressed "Start game"
+				    
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@4
+				supplier   	@8
+				Focus_Src  	@7
+				Focus_Entry 	@12
+				origin     	(195, 1569)
+				terminus   	(524, 1569)
+				ordinal    	7)
+			    (object InterMessView "Sending a command to start game" @50
+				location   	(0, 1775)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @51
+				    Parent_View 	@50
+				    location   	(719, 1731)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947ECFA0000"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	700
+				    justify    	0
+				    label      	"Sending a command to start game"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@8
+				supplier   	@17
+				Focus_Src  	@13
+				Focus_Entry 	@28
+				origin     	(555, 1775)
+				terminus   	(884, 1775)
+				ordinal    	8)
+			    (object SelfMessView "Processing request" @52
+				location   	(0, 1930)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @53
+				    Parent_View 	@52
+				    location   	(991, 1886)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947ED120266"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	432
+				    justify    	0
+				    label      	"Processing request"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@17
+				supplier   	@17
+				Focus_Src  	@29
+				Focus_Entry 	@30
+				origin     	(916, 1930)
+				terminus   	(1066, 1930)
+				ordinal    	9)
+			    (object InterMessView "Displaying the player's field and the opponent's field" @54
+				location   	(0, 2147)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @55
+				    Parent_View 	@54
+				    location   	(720, 2103)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947ED540361"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	1031
+				    justify    	0
+				    label      	"Displaying the player's field and the opponent's field"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	1)
+				line_color 	3342489
+				client     	@17
+				supplier   	@8
+				Focus_Src  	@31
+				Focus_Entry 	@14
+				origin     	(884, 2147)
+				terminus   	(556, 2147)
+				ordinal    	10)
+			    (object InterMessView "Displaying field for inputting coordinates" @56
+				location   	(0, 2326)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @57
+				    Parent_View 	@56
+				    location   	(720, 2282)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947ED6E02A9"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	814
+				    justify    	0
+				    label      	"Displaying field for inputting coordinates"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	1)
+				line_color 	3342489
+				client     	@17
+				supplier   	@8
+				Focus_Src  	@32
+				Focus_Entry 	@15
+				origin     	(884, 2326)
+				terminus   	(556, 2326)
+				ordinal    	11)
+			    (object InterMessView "Displaing button \"Pause\"" @58
+				location   	(0, 2500)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @59
+				    Parent_View 	@58
+				    location   	(720, 2456)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EDC50070"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	532
+				    justify    	0
+				    label      	
+|Displaing button "Pause"
+				    
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	1)
+				line_color 	3342489
+				client     	@17
+				supplier   	@8
+				Focus_Src  	@33
+				Focus_Entry 	@16
+				origin     	(884, 2500)
+				terminus   	(556, 2500)
+				ordinal    	12)
+			    (object Destruction_Marker @60
+				Parent_View 	@4
+				location   	(180, 1719)
+				line_color 	3342489
+				fill_color 	13434879)
+			    (object Destruction_Marker @61
+				Parent_View 	@8
+				location   	(540, 2650)
+				line_color 	3342489
+				fill_color 	13434879)
+			    (object Destruction_Marker @62
+				Parent_View 	@17
+				location   	(900, 2650)
+				line_color 	3342489
+				fill_color 	13434879)))
+		    (object InteractionDiagram "Button \"Pause\""
+			mechanism_ref 	@2
+			quid       	"5947EE450271"
+			title      	
+|Button "Pause"
+			
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object InterObjView "$UNNAMED$4" @63
+				location   	(180, 225)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	TRUE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@63
+				    location   	(180, 250)
+				    anchor_loc 	1
+				    nlines     	2
+				    max_width  	360
+				    justify    	0
+				    label      	"")
+				icon       	"Actor"
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5947EE580269"
+				width      	120
+				height     	1359
+				icon_height 	162
+				icon_width 	120
+				icon_y_offset 	0
+				annotation 	1
+				Focus_Of_Control 	(object Focus_Of_Control "" @64
+				    location   	(180, 441)
+				    line_color 	3342489
+				    InterObjView 	@63
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @65
+				    location   	(180, 1434)
+				    line_color 	3342489
+				    InterObjView 	@63
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE))
+			    (object InterObjView "User interface" @66
+				location   	(540, 225)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	TRUE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@66
+				    location   	(540, 225)
+				    fill_color 	13434879
+				    anchor_loc 	1
+				    nlines     	2
+				    max_width  	282
+				    justify    	0
+				    label      	"User interface")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5947EE630235"
+				width      	300
+				height     	1509
+				icon_height 	0
+				icon_width 	0
+				icon_y_offset 	0
+				annotation 	1
+				Focus_Of_Control 	(object Focus_Of_Control "" @67
+				    location   	(540, 441)
+				    line_color 	3342489
+				    InterObjView 	@66
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @68
+				    location   	(540, 591)
+				    line_color 	3342489
+				    InterObjView 	@66
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @69
+				    location   	(540, 1130)
+				    line_color 	3342489
+				    InterObjView 	@66
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @70
+				    location   	(540, 1288)
+				    line_color 	3342489
+				    InterObjView 	@66
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @71
+				    location   	(540, 1434)
+				    line_color 	3342489
+				    InterObjView 	@66
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @72
+				    location   	(540, 1584)
+				    line_color 	3342489
+				    InterObjView 	@66
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE))
+			    (object InterObjView "Program" @73
+				location   	(900, 228)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	TRUE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@73
+				    location   	(900, 228)
+				    fill_color 	13434879
+				    anchor_loc 	1
+				    nlines     	2
+				    max_width  	282
+				    justify    	0
+				    label      	"Program")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5947EE630237"
+				width      	300
+				height     	1688
+				icon_height 	0
+				icon_width 	0
+				icon_y_offset 	0
+				annotation 	1
+				Focus_Of_Control 	(object Focus_Of_Control "" @74
+				    location   	(900, 308)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	124
+				    y_coord    	34
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @75
+				    location   	(900, 591)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @76
+				    location   	(900, 738)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @77
+				    location   	(900, 763)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	90
+				    y_coord    	0
+				    Nested     	TRUE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @78
+				    location   	(900, 956)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @79
+				    location   	(900, 981)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	90
+				    y_coord    	0
+				    Nested     	TRUE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @80
+				    location   	(900, 1130)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @81
+				    location   	(900, 1288)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @82
+				    location   	(900, 1584)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @83
+				    location   	(900, 1741)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @84
+				    location   	(900, 1766)
+				    line_color 	3342489
+				    InterObjView 	@73
+				    height     	90
+				    y_coord    	0
+				    Nested     	TRUE))
+			    (object InterMessView "Press button \"Pause\"" @85
+				location   	(0, 441)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @86
+				    Parent_View 	@85
+				    location   	(359, 397)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EE6802C2"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	454
+				    justify    	0
+				    label      	
+|Press button "Pause"
+				    
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@63
+				supplier   	@66
+				Focus_Src  	@64
+				Focus_Entry 	@67
+				origin     	(195, 441)
+				terminus   	(524, 441)
+				ordinal    	0)
+			    (object InterMessView "Sending command to pause" @87
+				location   	(0, 591)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @88
+				    Parent_View 	@87
+				    location   	(719, 547)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EE860009"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	566
+				    justify    	0
+				    label      	"Sending command to pause"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@66
+				supplier   	@73
+				Focus_Src  	@68
+				Focus_Entry 	@75
+				origin     	(555, 591)
+				terminus   	(884, 591)
+				ordinal    	1)
+			    (object SelfMessView "Processing request" @89
+				location   	(0, 738)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @90
+				    Parent_View 	@89
+				    location   	(991, 694)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EEBA03C1"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	410
+				    justify    	0
+				    label      	"Processing request"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@73
+				supplier   	@73
+				Focus_Src  	@76
+				Focus_Entry 	@77
+				origin     	(916, 738)
+				terminus   	(1066, 738)
+				ordinal    	2)
+			    (object InterMessView "Displaying timer" @91
+				location   	(0, 1130)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @92
+				    Parent_View 	@91
+				    location   	(720, 1086)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EEC302B6"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	348
+				    justify    	0
+				    label      	"Displaying timer"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	1)
+				line_color 	3342489
+				client     	@73
+				supplier   	@66
+				Focus_Src  	@80
+				Focus_Entry 	@69
+				origin     	(884, 1130)
+				terminus   	(556, 1130)
+				ordinal    	4)
+			    (object SelfMessView "Calculate time" @93
+				location   	(0, 956)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @94
+				    Parent_View 	@93
+				    location   	(991, 912)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947EEDA0348"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	319
+				    justify    	0
+				    label      	"Calculate time"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@73
+				supplier   	@73
+				Focus_Src  	@78
+				Focus_Entry 	@79
+				origin     	(916, 956)
+				terminus   	(1066, 956)
+				ordinal    	3)
+			    (object InterMessView "Displaing button \"Stop pause\"" @95
+				location   	(0, 1288)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @96
+				    Parent_View 	@95
+				    location   	(720, 1244)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947F082035F"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	604
+				    justify    	0
+				    label      	
+|Displaing button "Stop pause"
+				    
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	1)
+				line_color 	3342489
+				client     	@73
+				supplier   	@66
+				Focus_Src  	@81
+				Focus_Entry 	@70
+				origin     	(884, 1288)
+				terminus   	(556, 1288)
+				ordinal    	5)
+			    (object InterMessView "Press button \"Stop pause\"" @97
+				location   	(0, 1434)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @98
+				    Parent_View 	@97
+				    location   	(359, 1390)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947F0DD0017"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	544
+				    justify    	0
+				    label      	
+|Press button "Stop pause"
+				    
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@63
+				supplier   	@66
+				Focus_Src  	@65
+				Focus_Entry 	@71
+				origin     	(195, 1434)
+				terminus   	(524, 1434)
+				ordinal    	6)
+			    (object InterMessView "Sending command to stop pause" @99
+				location   	(0, 1584)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @100
+				    Parent_View 	@99
+				    location   	(719, 1540)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947F0F6022F"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	654
+				    justify    	0
+				    label      	"Sending command to stop pause"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@66
+				supplier   	@73
+				Focus_Src  	@72
+				Focus_Entry 	@82
+				origin     	(555, 1584)
+				terminus   	(884, 1584)
+				ordinal    	7)
+			    (object SelfMessView "Stop pause and ñontinuation of the game" @101
+				location   	(0, 1741)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @102
+				    Parent_View 	@101
+				    location   	(991, 1697)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947F112023A"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	808
+				    justify    	0
+				    label      	"Stop pause and ñontinuation of the game"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@73
+				supplier   	@73
+				Focus_Src  	@83
+				Focus_Entry 	@84
+				origin     	(916, 1741)
+				terminus   	(1066, 1741)
+				ordinal    	8)
+			    (object Destruction_Marker @103
+				Parent_View 	@63
+				location   	(180, 1584)
+				line_color 	3342489
+				fill_color 	13434879)
+			    (object Destruction_Marker @104
+				Parent_View 	@66
+				location   	(540, 1734)
+				line_color 	3342489
+				fill_color 	13434879)
+			    (object Destruction_Marker @105
+				Parent_View 	@73
+				location   	(900, 1916)
+				line_color 	3342489
+				fill_color 	13434879)))
+		    (object InteractionDiagram "Input coordinate"
+			mechanism_ref 	@3
+			quid       	"5947F2DA0374"
+			title      	"Input coordinate"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	706
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object InterObjView "$UNNAMED$5" @106
+				location   	(180, 225)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	TRUE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@106
+				    location   	(180, 250)
+				    anchor_loc 	1
+				    nlines     	2
+				    max_width  	360
+				    justify    	0
+				    label      	"")
+				icon       	"Actor"
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5947F3480168"
+				width      	120
+				height     	333
+				icon_height 	162
+				icon_width 	120
+				icon_y_offset 	0
+				annotation 	1
+				Focus_Of_Control 	(object Focus_Of_Control "" @107
+				    location   	(180, 408)
+				    line_color 	3342489
+				    InterObjView 	@106
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE))
+			    (object InterObjView "User interface" @108
+				location   	(540, 225)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	TRUE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@108
+				    location   	(540, 225)
+				    fill_color 	13434879
+				    anchor_loc 	1
+				    nlines     	2
+				    max_width  	282
+				    justify    	0
+				    label      	"User interface")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5947F3480183"
+				width      	300
+				height     	816
+				icon_height 	0
+				icon_width 	0
+				icon_y_offset 	0
+				annotation 	1
+				Focus_Of_Control 	(object Focus_Of_Control "" @109
+				    location   	(540, 408)
+				    line_color 	3342489
+				    InterObjView 	@108
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @110
+				    location   	(540, 575)
+				    line_color 	3342489
+				    InterObjView 	@108
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @111
+				    location   	(540, 891)
+				    line_color 	3342489
+				    InterObjView 	@108
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE))
+			    (object InterObjView "Program" @112
+				location   	(900, 228)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	TRUE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@112
+				    location   	(900, 228)
+				    fill_color 	13434879
+				    anchor_loc 	1
+				    nlines     	2
+				    max_width  	282
+				    justify    	0
+				    label      	"Program")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5947F3480171"
+				width      	300
+				height     	813
+				icon_height 	0
+				icon_width 	0
+				icon_y_offset 	0
+				annotation 	1
+				Focus_Of_Control 	(object Focus_Of_Control "" @113
+				    location   	(900, 308)
+				    line_color 	3342489
+				    InterObjView 	@112
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @114
+				    location   	(900, 575)
+				    line_color 	3342489
+				    InterObjView 	@112
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @115
+				    location   	(900, 721)
+				    line_color 	3342489
+				    InterObjView 	@112
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @116
+				    location   	(900, 746)
+				    line_color 	3342489
+				    InterObjView 	@112
+				    height     	90
+				    y_coord    	0
+				    Nested     	TRUE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @117
+				    location   	(900, 891)
+				    line_color 	3342489
+				    InterObjView 	@112
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE))
+			    (object InterMessView "Inputing coordinate " @118
+				location   	(0, 408)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @119
+				    Parent_View 	@118
+				    location   	(359, 364)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947F348016C"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	423
+				    justify    	0
+				    label      	"Inputing coordinate"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@106
+				supplier   	@108
+				Focus_Src  	@107
+				Focus_Entry 	@109
+				origin     	(195, 408)
+				terminus   	(524, 408)
+				ordinal    	0)
+			    (object InterMessView "Sending command to end move" @120
+				location   	(0, 575)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @121
+				    Parent_View 	@120
+				    location   	(719, 531)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947F3480179"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	651
+				    justify    	0
+				    label      	"Sending command to end move"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@108
+				supplier   	@112
+				Focus_Src  	@110
+				Focus_Entry 	@114
+				origin     	(555, 575)
+				terminus   	(884, 575)
+				ordinal    	1)
+			    (object SelfMessView "Coordinate processing" @122
+				location   	(0, 721)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @123
+				    Parent_View 	@122
+				    location   	(989, 678)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947F3480180"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	485
+				    justify    	0
+				    label      	"Coordinate processing"
+				    pctDist    	0.493333
+				    height     	44
+				    orientation 	0)
+				line_color 	3342489
+				client     	@112
+				supplier   	@112
+				Focus_Src  	@115
+				Focus_Entry 	@116
+				origin     	(916, 721)
+				terminus   	(1066, 721)
+				ordinal    	2)
+			    (object InterMessView "Displaying the result on the field" @124
+				location   	(0, 891)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @125
+				    Parent_View 	@124
+				    location   	(720, 847)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5947F348017A"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	653
+				    justify    	0
+				    label      	"Displaying the result on the field"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	1)
+				line_color 	3342489
+				client     	@112
+				supplier   	@108
+				Focus_Src  	@117
+				Focus_Entry 	@111
+				origin     	(884, 891)
+				terminus   	(556, 891)
+				ordinal    	3)
+			    (object Destruction_Marker @126
+				Parent_View 	@106
+				location   	(180, 558)
+				line_color 	3342489
+				fill_color 	13434879)
+			    (object Destruction_Marker @127
+				Parent_View 	@108
+				location   	(540, 1041)
+				line_color 	3342489
+				fill_color 	13434879)
+			    (object Destruction_Marker @128
+				Parent_View 	@112
+				location   	(900, 1041)
+				line_color 	3342489
+				fill_color 	13434879)))))
+	    (object Class_Category "Class diagram"
+		quid       	"5947F52100A2"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class "Game"
+			quid       	"5947F63B03D2"
+			operations 	(list Operations
+			    (object Operation "Start_game"
+				quid       	"5948034E0208"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "Check_exit"
+				quid       	"59499A18010E"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "exit"
+				quid       	"594999F60018"
+				type       	"bool")
+			    (object ClassAttribute "act char"
+				quid       	"59499A02008E")))
+		    (object Class "Game_logic"
+			quid       	"594996D1021E"
+			superclasses 	(list inheritance_relationship_list
+			    (object Inheritance_Relationship
+				quid       	"594999DE00D0"
+				supplier   	"Use Case View::Class diagram::Game"
+				quidu      	"5947F63B03D2"))
+			operations 	(list Operations
+			    (object Operation "Fild_user_mapping"
+				quid       	"594997340060"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "changeState"
+				quid       	"5949982202AA"
+				concurrency 	"Sequential"
+				opExportControl 	"Private"
+				uid        	0)
+			    (object Operation "Field_user_mapping"
+				quid       	"5949974D0187"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "Field_computer_mapping"
+				quid       	"5949978300C6"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "Move"
+				quid       	"594997900335"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "View_field_computer"
+				quid       	"594997B4008D"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "View_field_user"
+				quid       	"594997BE033C"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "hit_space"
+				quid       	"594997C9011C"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "hit_ship"
+				quid       	"594997D30096"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "going_beyong"
+				quid       	"594997D9021F"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "WATER_SYMB"
+				quid       	"594996DB02D6")
+			    (object ClassAttribute "SHIP_SYMB"
+				quid       	"5949971A01E6")
+			    (object ClassAttribute "State* state_hit"
+				quid       	"5949980102C5")
+			    (object ClassAttribute "int x,y"
+				quid       	"594AF2310012")
+			    (object ClassAttribute "Field_computer"
+				quid       	"594AF23501D9")
+			    (object ClassAttribute "Field_user"
+				quid       	"594AF248001A")))
+		    (object Class "Field"
+			quid       	"59499A9F0134"
+			operations 	(list Operations
+			    (object Operation "Field"
+				quid       	"59499B08002E"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "ship_is_good"
+				quid       	"59499B190012"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "set_ship_wiith_size"
+				quid       	"59499B2E0230"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "set_ship"
+				quid       	"59499B4602B4"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "print_field"
+				quid       	"59499B510182"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "set_water"
+				quid       	"59499B5C019C"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0))
+			class_attributes 	(list class_attribute_list
+			    (object ClassAttribute "FIELD_DIM"
+				quid       	"59499AD100E6")
+			    (object ClassAttribute "WATER_SYMB"
+				quid       	"59499ADC03A8")
+			    (object ClassAttribute "SHIP_SYMB"
+				quid       	"59499AF1018A")))
+		    (object Class "Strategy"
+			quid       	"594AEF0C00F2"
+			operations 	(list Operations
+			    (object Operation "~Strategy"
+				quid       	"594AEF84015C"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "use"
+				quid       	"594AEF9002DC"
+				result     	"void"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)))
+		    (object Class "Context"
+			quid       	"594AEFC4001D"
+			operations 	(list Operations
+			    (object Operation "~Context"
+				quid       	"594AEFF30234"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "useStrategy"
+				quid       	"594AEFFE0196"
+				result     	"virtual void"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)
+			    (object Operation "setsStrategy"
+				quid       	"594AF0080366"
+				result     	"virtual void"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)))
+		    (object Class "HitSpace"
+			quid       	"594AF0420159"
+			superclasses 	(list inheritance_relationship_list
+			    (object Inheritance_Relationship
+				quid       	"594AF0DB00F7"
+				supplier   	"Use Case View::Class diagram::Strategy"
+				quidu      	"594AEF0C00F2"))
+			operations 	(list Operations
+			    (object Operation "use"
+				quid       	"594AF0C80197"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)))
+		    (object Class "HitShip"
+			quid       	"594AF09C00FE"
+			superclasses 	(list inheritance_relationship_list
+			    (object Inheritance_Relationship
+				quid       	"594AF0DD015B"
+				supplier   	"Use Case View::Class diagram::Strategy"
+				quidu      	"594AEF0C00F2"))
+			operations 	(list Operations
+			    (object Operation "use"
+				quid       	"594AF0CE03C9"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)))
+		    (object Class "WentBeyond"
+			quid       	"594AF0B70186"
+			superclasses 	(list inheritance_relationship_list
+			    (object Inheritance_Relationship
+				quid       	"594AF0DF01E3"
+				supplier   	"Use Case View::Class diagram::Strategy"
+				quidu      	"594AEF0C00F2"))
+			operations 	(list Operations
+			    (object Operation "use"
+				quid       	"594AF0D502FF"
+				concurrency 	"Sequential"
+				opExportControl 	"Public"
+				uid        	0)))
+		    (object Association "$UNNAMED$6"
+			quid       	"59499BB00158"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$7"
+				quid       	"59499BB00350"
+				supplier   	"Use Case View::Class diagram::Field"
+				quidu      	"59499A9F0134"
+				is_navigable 	TRUE)
+			    (object Role "$UNNAMED$8"
+				quid       	"59499BB00354"
+				supplier   	"Use Case View::Class diagram::Game_logic"
+				quidu      	"594996D1021E")))
+		    (object Association "$UNNAMED$9"
+			quid       	"594AEF1F023E"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$10"
+				quid       	"594AEF200057"
+				supplier   	"Use Case View::Class diagram::Strategy"
+				quidu      	"594AEF0C00F2"
+				is_navigable 	TRUE)
+			    (object Role "$UNNAMED$11"
+				quid       	"594AEF200094"
+				supplier   	"Use Case View::Class diagram::Context"
+				quidu      	"594AEFC4001D"
+				is_navigable 	TRUE
+				is_aggregate 	TRUE)))
+		    (object Association "Select strategy"
+			quid       	"594AEF280017"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$12"
+				quid       	"594AEF29004E"
+				supplier   	"Use Case View::Class diagram::Strategy"
+				quidu      	"594AEF0C00F2"
+				is_navigable 	TRUE)
+			    (object Role "$UNNAMED$13"
+				quid       	"594AEF290051"
+				supplier   	"Use Case View::Class diagram::Context"
+				quidu      	"594AEFC4001D")))
+		    (object Association "$UNNAMED$14"
+			quid       	"594AF1DE00A7"
+			roles      	(list role_list
+			    (object Role "$UNNAMED$15"
+				quid       	"594AF1E101BF"
+				supplier   	"Use Case View::Class diagram::Context"
+				quidu      	"594AEFC4001D"
+				is_navigable 	TRUE)
+			    (object Role "$UNNAMED$16"
+				quid       	"594AF1E101C4"
+				supplier   	"Use Case View::Class diagram::Game_logic"
+				quidu      	"594996D1021E"))))
+		logical_presentations 	(list unit_reference_list
+		    (object ClassDiagram "Class Diagram"
+			quid       	"5947F531030F"
+			title      	"Class Diagram"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	1238
+			origin_y   	1262
+			items      	(list diagram_item_list
+			    (object ClassView "Class" "Use Case View::Class diagram::Game" @129
+				ShowCompartmentStereotypes 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1495, 450)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@129
+				    location   	(1350, 294)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	290
+				    justify    	0
+				    label      	"Game")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5947F63B03D2"
+				compartment 	(object Compartment
+				    Parent_View 	@129
+				    location   	(1350, 355)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	5
+				    max_width  	293
+				    justify    	1)
+				width      	308
+				height     	336
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Use Case View::Class diagram::Field" @130
+				ShowCompartmentStereotypes 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(2866, 481)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@130
+				    location   	(2652, 200)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	428
+				    justify    	0
+				    label      	"Field")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"59499A9F0134"
+				compartment 	(object Compartment
+				    Parent_View 	@130
+				    location   	(2652, 261)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	10
+				    max_width  	437
+				    justify    	1)
+				width      	446
+				height     	586
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Use Case View::Class diagram::Strategy" @131
+				ShowCompartmentStereotypes 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1490, 1293)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@131
+				    location   	(1361, 1187)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	258
+				    justify    	0
+				    label      	"Strategy")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"594AEF0C00F2"
+				compartment 	(object Compartment
+				    Parent_View 	@131
+				    location   	(1361, 1248)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	3
+				    max_width  	256
+				    justify    	1)
+				width      	276
+				height     	236
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Use Case View::Class diagram::HitSpace" @132
+				ShowCompartmentStereotypes 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1175, 1634)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@132
+				    location   	(1069, 1553)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	212
+				    justify    	0
+				    label      	"HitSpace")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"594AF0420159"
+				compartment 	(object Compartment
+				    Parent_View 	@132
+				    location   	(1069, 1614)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	2
+				    max_width  	150
+				    justify    	1)
+				width      	230
+				height     	186
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Use Case View::Class diagram::HitShip" @133
+				ShowCompartmentStereotypes 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1497, 1641)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@133
+				    location   	(1410, 1560)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	174
+				    justify    	0
+				    label      	"HitShip")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"594AF09C00FE"
+				compartment 	(object Compartment
+				    Parent_View 	@133
+				    location   	(1410, 1621)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	2
+				    max_width  	150
+				    justify    	1)
+				width      	192
+				height     	186
+				annotation 	8
+				autoResize 	TRUE)
+			    (object ClassView "Class" "Use Case View::Class diagram::WentBeyond" @134
+				ShowCompartmentStereotypes 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1902, 1641)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@134
+				    location   	(1766, 1560)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	272
+				    justify    	0
+				    label      	"WentBeyond")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"594AF0B70186"
+				compartment 	(object Compartment
+				    Parent_View 	@134
+				    location   	(1766, 1621)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	2
+				    max_width  	150
+				    justify    	1)
+				width      	290
+				height     	186
+				annotation 	8
+				autoResize 	TRUE)
+			    (object InheritView "" @135
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"594AF0DB00F7"
+				client     	@132
+				supplier   	@131
+				vertices   	(list Points
+				    (1258, 1540)
+				    (1378, 1411))
+				line_style 	0)
+			    (object InheritView "" @136
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"594AF0DD015B"
+				client     	@133
+				supplier   	@131
+				vertices   	(list Points
+				    (1494, 1547)
+				    (1491, 1411))
+				line_style 	0)
+			    (object InheritView "" @137
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"594AF0DF01E3"
+				client     	@134
+				supplier   	@131
+				vertices   	(list Points
+				    (1791, 1547)
+				    (1628, 1409))
+				line_style 	0)
+			    (object ClassView "Class" "Use Case View::Class diagram::Game_logic" @138
+				ShowCompartmentStereotypes 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(2188, 468)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@138
+				    location   	(1921, 12)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	534
+				    justify    	0
+				    label      	"Game_logic")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"594996D1021E"
+				compartment 	(object Compartment
+				    Parent_View 	@138
+				    location   	(1921, 73)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	17
+				    max_width  	531
+				    justify    	1)
+				width      	552
+				height     	936
+				annotation 	8
+				autoResize 	TRUE)
+			    (object InheritView "" @139
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"594999DE00D0"
+				client     	@138
+				supplier   	@129
+				vertices   	(list Points
+				    (1911, 460)
+				    (1649, 453))
+				line_style 	0)
+			    (object AssociationViewNew "$UNNAMED$6" @140
+				location   	(2553, 473)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"59499BB00158"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$7" @141
+					Parent_View 	@140
+					location   	(759, 54)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"59499BB00350"
+					client     	@140
+					supplier   	@130
+					vertices   	(list Points
+					    (2553, 473)
+					    (2642, 475))
+					line_style 	0)
+				    (object RoleView "$UNNAMED$8" @142
+					Parent_View 	@140
+					location   	(759, 54)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"59499BB00354"
+					client     	@140
+					supplier   	@138
+					vertices   	(list Points
+					    (2553, 473)
+					    (2464, 472))
+					line_style 	0)))
+			    (object ClassView "Class" "Use Case View::Class diagram::Context" @143
+				ShowCompartmentStereotypes 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(2173, 1297)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@143
+				    location   	(2017, 1166)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	312
+				    justify    	0
+				    label      	"Context")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"594AEFC4001D"
+				compartment 	(object Compartment
+				    Parent_View 	@143
+				    location   	(2017, 1227)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	4
+				    max_width  	315
+				    justify    	1)
+				width      	330
+				height     	286
+				annotation 	8
+				autoResize 	TRUE)
+			    (object AssociationViewNew "Select strategy" @144
+				location   	(1817, 1294)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @145
+				    Parent_View 	@144
+				    location   	(1819, 1256)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	TRUE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	309
+				    justify    	0
+				    label      	"Select strategy"
+				    pctDist    	0.533333
+				    height     	39
+				    orientation 	0)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"594AEF280017"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$12" @146
+					Parent_View 	@144
+					location   	(23, 875)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"594AEF29004E"
+					client     	@144
+					supplier   	@131
+					vertices   	(list Points
+					    (1817, 1294)
+					    (1628, 1293))
+					line_style 	0)
+				    (object RoleView "$UNNAMED$13" @147
+					Parent_View 	@144
+					location   	(23, 875)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"594AEF290051"
+					client     	@144
+					supplier   	@143
+					vertices   	(list Points
+					    (1817, 1294)
+					    (2007, 1296))
+					line_style 	0)))
+			    (object AssociationViewNew "$UNNAMED$9" @148
+				location   	(1817, 1294)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"594AEF1F023E"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$10" @149
+					Parent_View 	@148
+					location   	(23, 875)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"594AEF200057"
+					client     	@148
+					supplier   	@131
+					vertices   	(list Points
+					    (1817, 1294)
+					    (1628, 1293))
+					line_style 	0)
+				    (object RoleView "$UNNAMED$11" @150
+					Parent_View 	@148
+					location   	(23, 875)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"594AEF200094"
+					client     	@148
+					supplier   	@143
+					vertices   	(list Points
+					    (1817, 1294)
+					    (2007, 1296))
+					line_style 	0)))
+			    (object AssociationViewNew "$UNNAMED$14" @151
+				location   	(2176, 1044)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	204
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"594AF1DE00A7"
+				roleview_list 	(list RoleViews
+				    (object RoleView "$UNNAMED$15" @152
+					Parent_View 	@151
+					location   	(123, 603)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"594AF1E101BF"
+					client     	@151
+					supplier   	@143
+					vertices   	(list Points
+					    (2176, 1044)
+					    (2174, 1153))
+					line_style 	0)
+				    (object RoleView "$UNNAMED$16" @153
+					Parent_View 	@151
+					location   	(123, 603)
+					stereotype 	TRUE
+					line_color 	3342489
+					quidu      	"594AF1E101C4"
+					client     	@151
+					supplier   	@138
+					vertices   	(list Points
+					    (2176, 1044)
+					    (2178, 936))
+					line_style 	0))))))))
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"5947E7090160"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object UseCaseView "Use Case View::User interfice" @154
+			location   	(722, 840)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@154
+			    location   	(722, 978)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"User interfice")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5947E7190352"
+			height     	118)
+		    (object ClassView "Class" "Use Case View::User" @155
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(208, 837)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@155
+			    location   	(208, 997)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	325
+			    justify    	0
+			    label      	"User")
+			icon       	"Actor"
+			icon_style 	"Icon"
+			line_color 	3342489
+			quidu      	"5947E73E026F"
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$0" @156
+			location   	(437, 836)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5947E7D100DD"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$1" @157
+				Parent_View 	@156
+				location   	(59, 636)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5947E7D103A4"
+				client     	@156
+				supplier   	@154
+				vertices   	(list Points
+				    (437, 836)
+				    (610, 836))
+				line_style 	0)
+			    (object RoleView "$UNNAMED$2" @158
+				Parent_View 	@156
+				location   	(59, 636)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5947E7D103A6"
+				client     	@156
+				supplier   	@155
+				vertices   	(list Points
+				    (437, 836)
+				    (265, 837))
+				line_style 	0)))
+		    (object UseCaseView "Use Case View::Stop game" @159
+			location   	(1225, 584)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@159
+			    location   	(1225, 722)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Stop game")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5949A725024B"
+			height     	118)
+		    (object UseCaseView "Use Case View::Pause game" @160
+			location   	(1259, 841)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@160
+			    location   	(1259, 979)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Pause game")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5949A72C02B0"
+			height     	118)
+		    (object UseCaseView "Use Case View::Start game" @161
+			location   	(1234, 1128)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@161
+			    location   	(1234, 1266)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"Start game")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5949A7360224"
+			height     	118)
+		    (object UseCaseView "Use Case View::View statistic" @162
+			location   	(1256, 1437)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	204
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@162
+			    location   	(1256, 1575)
+			    anchor_loc 	1
+			    nlines     	2
+			    max_width  	630
+			    justify    	0
+			    label      	"View statistic")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5949A73E0142"
+			height     	118)
+		    (object DependencyView "" @163
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5949A74F02C3"
+			client     	@154
+			supplier   	@159
+			vertices   	(list Points
+			    (825, 782)
+			    (1115, 637))
+			line_style 	0)
+		    (object DependencyView "" @164
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5949A752006A"
+			client     	@154
+			supplier   	@160
+			vertices   	(list Points
+			    (830, 839)
+			    (1147, 839))
+			line_style 	0)
+		    (object DependencyView "" @165
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5949A7540339"
+			client     	@154
+			supplier   	@161
+			vertices   	(list Points
+			    (846, 909)
+			    (1133, 1070))
+			line_style 	0)
+		    (object DependencyView "" @166
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5949A75702EF"
+			client     	@154
+			supplier   	@162
+			vertices   	(list Points
+			    (846, 978)
+			    (1202, 1378))
+			line_style 	0)))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"5947E709013A"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"5947E709013C"
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"5947E7090141"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"5947E709013C"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"5947E709015F"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list)))
+	category   	"Logical View"
+	quidu      	"5947E709013A")
+    process_structure 	(object Processes
+	quid       	"5947E709013D"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"5947E709013F"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	quid       	"5947E709013E"))
