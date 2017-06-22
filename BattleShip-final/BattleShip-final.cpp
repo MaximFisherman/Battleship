@@ -20,8 +20,8 @@ public:
 
 int main()
 {
-	Game g;
-	g.Start_game();
+	Game game;
+	game.Start_game();
 	return 0;
 }
 
@@ -33,10 +33,10 @@ bool Game::Check_exit(char* act) {
 };
 
 void Game::Timer() {
+	system("cls");
 	time_t seconds = time(NULL);
 	tm* timeinfo = localtime(&seconds);
 	cout << "Current Datetime:" << asctime(timeinfo);
-	system("cls");
 	Sleep(5);
 };
 
@@ -66,6 +66,8 @@ void Game::Start_game()
 			game_logic.Field_computer_mapping();//initialization Field computer
 		}
 
+		system("cls"); //Clear window
+
 		cout << "Your field:" << endl;
 		game_logic.View_field_user();
 
@@ -73,15 +75,21 @@ void Game::Start_game()
 		game_logic.View_field_computer();
 
 		//Pause
-		cout << "input command move 1 or pause 2: ";
-		cin >> command_pause;
+			cout << "input command move 1 or pause 2: ";
+			cin >> command_pause;
 		if (command_pause == 2) {
-			cout << "sad";
 			while (true) {
 				if (GetAsyncKeyState(VK_LSHIFT))break;//Exit loop left shift
 				Timer();
 			}
 		}
+			system("cls");
+			cout << "Your field:" << endl;
+			game_logic.View_field_user();
+
+			cout << endl << "Your opponent's field" << endl;
+			game_logic.View_field_computer();
+
 			cout << "input coordinate x and y: " << endl;
 			cin >> Ux >> Uy;
 		

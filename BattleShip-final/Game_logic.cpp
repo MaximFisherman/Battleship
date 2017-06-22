@@ -65,7 +65,7 @@ bool Game_logic::Check_victory() {
 	}
 	if (flag == 2)
 	{
-		std::cout << "Comuter win!\n";
+		std::cout << "Computer win!\n";
 		return true;
 	}
 	return false;
