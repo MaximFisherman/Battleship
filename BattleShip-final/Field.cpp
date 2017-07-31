@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Field.h"
 
-bool  Field::ship_is_good
+bool  Field::SHIP_IS_GOOD
 (
 	int         size,
 	bool        is_horiz,
@@ -42,7 +42,7 @@ bool  Field::ship_is_good
 	}
 }
 /////////////////////////////////////////////////////////////////////////////////////////
-void  Field::set_ship_with_size(int  size, char  field[][FIELD_DIM])
+void  Field::setShipWithSize(int  size, char  field[][FIELD_DIM])
 {
 	bool  is_horiz = rand() % 2 == 0;//If rand() % 2 == 0 return true 
 	int   row_top = 0;
@@ -62,7 +62,7 @@ void  Field::set_ship_with_size(int  size, char  field[][FIELD_DIM])
 			col_left = rand() % FIELD_DIM;// get random size cell width size 
 		} while (is_horiz
 			&& col_left > FIELD_DIM - size);
-	} while (!ship_is_good(size, is_horiz, row_top, col_left, field));
+	} while (!SHIP_IS_GOOD(size, is_horiz, row_top, col_left, field));
 
 	if (is_horiz)
 	{
@@ -80,26 +80,26 @@ void  Field::set_ship_with_size(int  size, char  field[][FIELD_DIM])
 	}
 }
 /////////////////////////////////////////////////////////////////////////////////////////
-void  Field::set_ships(char  field[][FIELD_DIM])
+void  Field::setShips(char  field[][FIELD_DIM])
 {
 	for (int i = 0; i < 1; ++i)
 	{
-		set_ship_with_size(4, field);
+		setShipWithSize(4, field);
 	}
 
 	for (int i = 0; i < 2; ++i)
 	{
-		set_ship_with_size(3, field);
+		setShipWithSize(3, field);
 	}
 
 	for (int i = 0; i < 3; ++i)
 	{
-		set_ship_with_size(2, field);
+		setShipWithSize(2, field);
 	}
 
 	for (int i = 0; i < 4; ++i)
 	{
-		set_ship_with_size(1, field);
+		setShipWithSize(1, field);
 	}
 };
 
@@ -122,7 +122,7 @@ int* Field::print_field(char  field[][FIELD_DIM]){
 	return temp_mas;
 };
 
-void  Field::set_water(char  field[][FIELD_DIM])
+void  Field::setWater(char  field[][FIELD_DIM])
 {
 	for (int i = 0; i < FIELD_DIM; ++i)
 	{

@@ -2288,6 +2288,11 @@
 		logical_models 	(list unit_reference_list
 		    (object Class "Game"
 			quid       	"5947F63B03D2"
+			superclasses 	(list inheritance_relationship_list
+			    (object Inheritance_Relationship
+				quid       	"597F62840229"
+				supplier   	"Use Case View::Class diagram::Game_logic"
+				quidu      	"594996D1021E"))
 			operations 	(list Operations
 			    (object Operation "Start_game"
 				quid       	"5948034E0208"
@@ -2309,9 +2314,13 @@
 			quid       	"594996D1021E"
 			superclasses 	(list inheritance_relationship_list
 			    (object Inheritance_Relationship
-				quid       	"594999DE00D0"
-				supplier   	"Use Case View::Class diagram::Game"
-				quidu      	"5947F63B03D2"))
+				quid       	"597F62900119"
+				supplier   	"Use Case View::Class diagram::Field"
+				quidu      	"59499A9F0134")
+			    (object Inheritance_Relationship
+				quid       	"597F62920321"
+				supplier   	"Use Case View::Class diagram::Context"
+				quidu      	"594AEFC4001D"))
 			operations 	(list Operations
 			    (object Operation "Fild_user_mapping"
 				quid       	"594997340060"
@@ -2490,26 +2499,14 @@
 				opExportControl 	"Public"
 				uid        	0)))
 		    (object Association "$UNNAMED$6"
-			quid       	"59499BB00158"
-			roles      	(list role_list
-			    (object Role "$UNNAMED$7"
-				quid       	"59499BB00350"
-				supplier   	"Use Case View::Class diagram::Field"
-				quidu      	"59499A9F0134"
-				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$8"
-				quid       	"59499BB00354"
-				supplier   	"Use Case View::Class diagram::Game_logic"
-				quidu      	"594996D1021E")))
-		    (object Association "$UNNAMED$9"
 			quid       	"594AEF1F023E"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$10"
+			    (object Role "$UNNAMED$7"
 				quid       	"594AEF200057"
 				supplier   	"Use Case View::Class diagram::Strategy"
 				quidu      	"594AEF0C00F2"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$11"
+			    (object Role "$UNNAMED$8"
 				quid       	"594AEF200094"
 				supplier   	"Use Case View::Class diagram::Context"
 				quidu      	"594AEFC4001D"
@@ -2518,27 +2515,15 @@
 		    (object Association "Select strategy"
 			quid       	"594AEF280017"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$12"
+			    (object Role "$UNNAMED$9"
 				quid       	"594AEF29004E"
 				supplier   	"Use Case View::Class diagram::Strategy"
 				quidu      	"594AEF0C00F2"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$13"
+			    (object Role "$UNNAMED$10"
 				quid       	"594AEF290051"
 				supplier   	"Use Case View::Class diagram::Context"
-				quidu      	"594AEFC4001D")))
-		    (object Association "$UNNAMED$14"
-			quid       	"594AF1DE00A7"
-			roles      	(list role_list
-			    (object Role "$UNNAMED$15"
-				quid       	"594AF1E101BF"
-				supplier   	"Use Case View::Class diagram::Context"
-				quidu      	"594AEFC4001D"
-				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$16"
-				quid       	"594AF1E101C4"
-				supplier   	"Use Case View::Class diagram::Game_logic"
-				quidu      	"594996D1021E"))))
+				quidu      	"594AEFC4001D"))))
 		logical_presentations 	(list unit_reference_list
 		    (object ClassDiagram "Class Diagram"
 			quid       	"5947F531030F"
@@ -2546,8 +2531,8 @@
 			zoom       	100
 			max_height 	28350
 			max_width  	21600
-			origin_x   	1238
-			origin_y   	1262
+			origin_x   	1237
+			origin_y   	1263
 			items      	(list diagram_item_list
 			    (object ClassView "Class" "Use Case View::Class diagram::Game" @129
 				ShowCompartmentStereotypes 	TRUE
@@ -2599,107 +2584,7 @@
 				height     	336
 				annotation 	8
 				autoResize 	TRUE)
-			    (object ClassView "Class" "Use Case View::Class diagram::Field" @130
-				ShowCompartmentStereotypes 	TRUE
-				IncludeAttribute 	TRUE
-				IncludeOperation 	TRUE
-				location   	(2866, 481)
-				font       	(object Font
-				    size       	10
-				    face       	"Arial"
-				    charSet    	204
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object ItemLabel
-				    Parent_View 	@130
-				    location   	(2652, 200)
-				    fill_color 	13434879
-				    nlines     	1
-				    max_width  	428
-				    justify    	0
-				    label      	"Field")
-				icon_style 	"Icon"
-				line_color 	3342489
-				fill_color 	13434879
-				quidu      	"59499A9F0134"
-				compartment 	(object Compartment
-				    Parent_View 	@130
-				    location   	(2652, 261)
-				    font       	(object Font
-					size       	10
-					face       	"Arial"
-					charSet    	204
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    icon_style 	"Icon"
-				    fill_color 	13434879
-				    anchor     	2
-				    nlines     	10
-				    max_width  	437
-				    justify    	1)
-				width      	446
-				height     	586
-				annotation 	8
-				autoResize 	TRUE)
-			    (object ClassView "Class" "Use Case View::Class diagram::Strategy" @131
-				ShowCompartmentStereotypes 	TRUE
-				IncludeAttribute 	TRUE
-				IncludeOperation 	TRUE
-				location   	(1490, 1293)
-				font       	(object Font
-				    size       	10
-				    face       	"Arial"
-				    charSet    	204
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object ItemLabel
-				    Parent_View 	@131
-				    location   	(1361, 1187)
-				    fill_color 	13434879
-				    nlines     	1
-				    max_width  	258
-				    justify    	0
-				    label      	"Strategy")
-				icon_style 	"Icon"
-				line_color 	3342489
-				fill_color 	13434879
-				quidu      	"594AEF0C00F2"
-				compartment 	(object Compartment
-				    Parent_View 	@131
-				    location   	(1361, 1248)
-				    font       	(object Font
-					size       	10
-					face       	"Arial"
-					charSet    	204
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    icon_style 	"Icon"
-				    fill_color 	13434879
-				    anchor     	2
-				    nlines     	3
-				    max_width  	256
-				    justify    	1)
-				width      	276
-				height     	236
-				annotation 	8
-				autoResize 	TRUE)
-			    (object ClassView "Class" "Use Case View::Class diagram::HitSpace" @132
+			    (object ClassView "Class" "Use Case View::Class diagram::HitSpace" @130
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -2715,7 +2600,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@132
+				    Parent_View 	@130
 				    location   	(1069, 1553)
 				    fill_color 	13434879
 				    nlines     	1
@@ -2727,7 +2612,7 @@
 				fill_color 	13434879
 				quidu      	"594AF0420159"
 				compartment 	(object Compartment
-				    Parent_View 	@132
+				    Parent_View 	@130
 				    location   	(1069, 1614)
 				    font       	(object Font
 					size       	10
@@ -2749,7 +2634,7 @@
 				height     	186
 				annotation 	8
 				autoResize 	TRUE)
-			    (object ClassView "Class" "Use Case View::Class diagram::HitShip" @133
+			    (object ClassView "Class" "Use Case View::Class diagram::HitShip" @131
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -2765,7 +2650,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@133
+				    Parent_View 	@131
 				    location   	(1410, 1560)
 				    fill_color 	13434879
 				    nlines     	1
@@ -2777,7 +2662,7 @@
 				fill_color 	13434879
 				quidu      	"594AF09C00FE"
 				compartment 	(object Compartment
-				    Parent_View 	@133
+				    Parent_View 	@131
 				    location   	(1410, 1621)
 				    font       	(object Font
 					size       	10
@@ -2799,7 +2684,7 @@
 				height     	186
 				annotation 	8
 				autoResize 	TRUE)
-			    (object ClassView "Class" "Use Case View::Class diagram::WentBeyond" @134
+			    (object ClassView "Class" "Use Case View::Class diagram::WentBeyond" @132
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -2815,7 +2700,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@134
+				    Parent_View 	@132
 				    location   	(1766, 1560)
 				    fill_color 	13434879
 				    nlines     	1
@@ -2827,7 +2712,7 @@
 				fill_color 	13434879
 				quidu      	"594AF0B70186"
 				compartment 	(object Compartment
-				    Parent_View 	@134
+				    Parent_View 	@132
 				    location   	(1766, 1621)
 				    font       	(object Font
 					size       	10
@@ -2849,41 +2734,11 @@
 				height     	186
 				annotation 	8
 				autoResize 	TRUE)
-			    (object InheritView "" @135
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"594AF0DB00F7"
-				client     	@132
-				supplier   	@131
-				vertices   	(list Points
-				    (1258, 1540)
-				    (1378, 1411))
-				line_style 	0)
-			    (object InheritView "" @136
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"594AF0DD015B"
-				client     	@133
-				supplier   	@131
-				vertices   	(list Points
-				    (1494, 1547)
-				    (1491, 1411))
-				line_style 	0)
-			    (object InheritView "" @137
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"594AF0DF01E3"
-				client     	@134
-				supplier   	@131
-				vertices   	(list Points
-				    (1791, 1547)
-				    (1628, 1409))
-				line_style 	0)
-			    (object ClassView "Class" "Use Case View::Class diagram::Game_logic" @138
+			    (object ClassView "Class" "Use Case View::Class diagram::Field" @133
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
-				location   	(2188, 468)
+				location   	(2866, 481)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -2895,20 +2750,20 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@138
-				    location   	(1921, 12)
+				    Parent_View 	@133
+				    location   	(2652, 200)
 				    fill_color 	13434879
 				    nlines     	1
-				    max_width  	534
+				    max_width  	428
 				    justify    	0
-				    label      	"Game_logic")
+				    label      	"Field")
 				icon_style 	"Icon"
 				line_color 	3342489
 				fill_color 	13434879
-				quidu      	"594996D1021E"
+				quidu      	"59499A9F0134"
 				compartment 	(object Compartment
-				    Parent_View 	@138
-				    location   	(1921, 73)
+				    Parent_View 	@133
+				    location   	(2652, 261)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -2922,25 +2777,18 @@
 				    icon_style 	"Icon"
 				    fill_color 	13434879
 				    anchor     	2
-				    nlines     	17
-				    max_width  	531
+				    nlines     	10
+				    max_width  	437
 				    justify    	1)
-				width      	552
-				height     	936
+				width      	446
+				height     	586
 				annotation 	8
 				autoResize 	TRUE)
-			    (object InheritView "" @139
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"594999DE00D0"
-				client     	@138
-				supplier   	@129
-				vertices   	(list Points
-				    (1911, 460)
-				    (1649, 453))
-				line_style 	0)
-			    (object AssociationViewNew "$UNNAMED$6" @140
-				location   	(2553, 473)
+			    (object ClassView "Class" "Use Case View::Class diagram::Strategy" @134
+				ShowCompartmentStereotypes 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(1490, 1293)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -2951,35 +2799,72 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@134
+				    location   	(1361, 1187)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	258
+				    justify    	0
+				    label      	"Strategy")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"594AEF0C00F2"
+				compartment 	(object Compartment
+				    Parent_View 	@134
+				    location   	(1361, 1248)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	3
+				    max_width  	262
+				    justify    	1)
+				width      	276
+				height     	236
+				annotation 	8
+				autoResize 	TRUE)
+			    (object InheritView "" @135
 				stereotype 	TRUE
 				line_color 	3342489
-				quidu      	"59499BB00158"
-				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$7" @141
-					Parent_View 	@140
-					location   	(759, 54)
-					stereotype 	TRUE
-					line_color 	3342489
-					quidu      	"59499BB00350"
-					client     	@140
-					supplier   	@130
-					vertices   	(list Points
-					    (2553, 473)
-					    (2642, 475))
-					line_style 	0)
-				    (object RoleView "$UNNAMED$8" @142
-					Parent_View 	@140
-					location   	(759, 54)
-					stereotype 	TRUE
-					line_color 	3342489
-					quidu      	"59499BB00354"
-					client     	@140
-					supplier   	@138
-					vertices   	(list Points
-					    (2553, 473)
-					    (2464, 472))
-					line_style 	0)))
-			    (object ClassView "Class" "Use Case View::Class diagram::Context" @143
+				quidu      	"594AF0DB00F7"
+				client     	@130
+				supplier   	@134
+				vertices   	(list Points
+				    (1258, 1540)
+				    (1378, 1411))
+				line_style 	0)
+			    (object InheritView "" @136
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"594AF0DD015B"
+				client     	@131
+				supplier   	@134
+				vertices   	(list Points
+				    (1494, 1547)
+				    (1491, 1411))
+				line_style 	0)
+			    (object InheritView "" @137
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"594AF0DF01E3"
+				client     	@132
+				supplier   	@134
+				vertices   	(list Points
+				    (1791, 1547)
+				    (1628, 1409))
+				line_style 	0)
+			    (object ClassView "Class" "Use Case View::Class diagram::Context" @138
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -2995,7 +2880,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@143
+				    Parent_View 	@138
 				    location   	(2017, 1166)
 				    fill_color 	13434879
 				    nlines     	1
@@ -3007,7 +2892,7 @@
 				fill_color 	13434879
 				quidu      	"594AEFC4001D"
 				compartment 	(object Compartment
-				    Parent_View 	@143
+				    Parent_View 	@138
 				    location   	(2017, 1227)
 				    font       	(object Font
 					size       	10
@@ -3029,7 +2914,7 @@
 				height     	286
 				annotation 	8
 				autoResize 	TRUE)
-			    (object AssociationViewNew "Select strategy" @144
+			    (object AssociationViewNew "Select strategy" @139
 				location   	(1817, 1294)
 				font       	(object Font
 				    size       	10
@@ -3041,8 +2926,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @145
-				    Parent_View 	@144
+				label      	(object SegLabel @140
+				    Parent_View 	@139
 				    location   	(1819, 1256)
 				    font       	(object Font
 					size       	10
@@ -3067,31 +2952,31 @@
 				line_color 	3342489
 				quidu      	"594AEF280017"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$12" @146
-					Parent_View 	@144
+				    (object RoleView "$UNNAMED$9" @141
+					Parent_View 	@139
 					location   	(23, 875)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"594AEF29004E"
-					client     	@144
-					supplier   	@131
+					client     	@139
+					supplier   	@134
 					vertices   	(list Points
 					    (1817, 1294)
 					    (1628, 1293))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$13" @147
-					Parent_View 	@144
+				    (object RoleView "$UNNAMED$10" @142
+					Parent_View 	@139
 					location   	(23, 875)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"594AEF290051"
-					client     	@144
-					supplier   	@143
+					client     	@139
+					supplier   	@138
 					vertices   	(list Points
 					    (1817, 1294)
-					    (2007, 1296))
+					    (2007, 1295))
 					line_style 	0)))
-			    (object AssociationViewNew "$UNNAMED$9" @148
+			    (object AssociationViewNew "$UNNAMED$6" @143
 				location   	(1817, 1294)
 				font       	(object Font
 				    size       	10
@@ -3107,32 +2992,35 @@
 				line_color 	3342489
 				quidu      	"594AEF1F023E"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$10" @149
-					Parent_View 	@148
+				    (object RoleView "$UNNAMED$7" @144
+					Parent_View 	@143
 					location   	(23, 875)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"594AEF200057"
-					client     	@148
-					supplier   	@131
+					client     	@143
+					supplier   	@134
 					vertices   	(list Points
 					    (1817, 1294)
 					    (1628, 1293))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$11" @150
-					Parent_View 	@148
+				    (object RoleView "$UNNAMED$8" @145
+					Parent_View 	@143
 					location   	(23, 875)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"594AEF200094"
-					client     	@148
-					supplier   	@143
+					client     	@143
+					supplier   	@138
 					vertices   	(list Points
 					    (1817, 1294)
-					    (2007, 1296))
+					    (2007, 1295))
 					line_style 	0)))
-			    (object AssociationViewNew "$UNNAMED$14" @151
-				location   	(2176, 1044)
+			    (object ClassView "Class" "Use Case View::Class diagram::Game_logic" @146
+				ShowCompartmentStereotypes 	TRUE
+				IncludeAttribute 	TRUE
+				IncludeOperation 	TRUE
+				location   	(2188, 468)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -3143,34 +3031,71 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@146
+				    location   	(1921, 12)
+				    fill_color 	13434879
+				    nlines     	1
+				    max_width  	534
+				    justify    	0
+				    label      	"Game_logic")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"594996D1021E"
+				compartment 	(object Compartment
+				    Parent_View 	@146
+				    location   	(1921, 73)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	204
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    icon_style 	"Icon"
+				    fill_color 	13434879
+				    anchor     	2
+				    nlines     	17
+				    max_width  	537
+				    justify    	1)
+				width      	552
+				height     	936
+				annotation 	8
+				autoResize 	TRUE)
+			    (object InheritView "" @147
 				stereotype 	TRUE
 				line_color 	3342489
-				quidu      	"594AF1DE00A7"
-				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$15" @152
-					Parent_View 	@151
-					location   	(123, 603)
-					stereotype 	TRUE
-					line_color 	3342489
-					quidu      	"594AF1E101BF"
-					client     	@151
-					supplier   	@143
-					vertices   	(list Points
-					    (2176, 1044)
-					    (2174, 1153))
-					line_style 	0)
-				    (object RoleView "$UNNAMED$16" @153
-					Parent_View 	@151
-					location   	(123, 603)
-					stereotype 	TRUE
-					line_color 	3342489
-					quidu      	"594AF1E101C4"
-					client     	@151
-					supplier   	@138
-					vertices   	(list Points
-					    (2176, 1044)
-					    (2178, 936))
-					line_style 	0))))))))
+				quidu      	"597F62840229"
+				client     	@129
+				supplier   	@146
+				vertices   	(list Points
+				    (1649, 453)
+				    (1911, 460))
+				line_style 	0)
+			    (object InheritView "" @148
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"597F62900119"
+				client     	@146
+				supplier   	@133
+				vertices   	(list Points
+				    (2464, 472)
+				    (2642, 475))
+				line_style 	0)
+			    (object InheritView "" @149
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"597F62920321"
+				client     	@146
+				supplier   	@138
+				vertices   	(list Points
+				    (2178, 936)
+				    (2174, 1153))
+				line_style 	0))))))
 	logical_presentations 	(list unit_reference_list
 	    (object UseCaseDiagram "Main"
 		quid       	"5947E7090160"
@@ -3181,7 +3106,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object UseCaseView "Use Case View::User interfice" @154
+		    (object UseCaseView "Use Case View::User interfice" @150
 			location   	(722, 840)
 			font       	(object Font
 			    size       	10
@@ -3194,7 +3119,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@154
+			    Parent_View 	@150
 			    location   	(722, 978)
 			    anchor_loc 	1
 			    nlines     	2
@@ -3206,7 +3131,7 @@
 			fill_color 	13434879
 			quidu      	"5947E7190352"
 			height     	118)
-		    (object ClassView "Class" "Use Case View::User" @155
+		    (object ClassView "Class" "Use Case View::User" @151
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -3222,7 +3147,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@155
+			    Parent_View 	@151
 			    location   	(208, 997)
 			    anchor_loc 	1
 			    nlines     	2
@@ -3235,7 +3160,7 @@
 			quidu      	"5947E73E026F"
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$0" @156
+		    (object AssociationViewNew "$UNNAMED$0" @152
 			location   	(437, 836)
 			font       	(object Font
 			    size       	10
@@ -3251,31 +3176,31 @@
 			line_color 	3342489
 			quidu      	"5947E7D100DD"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$1" @157
-				Parent_View 	@156
+			    (object RoleView "$UNNAMED$1" @153
+				Parent_View 	@152
 				location   	(59, 636)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5947E7D103A4"
-				client     	@156
-				supplier   	@154
+				client     	@152
+				supplier   	@150
 				vertices   	(list Points
 				    (437, 836)
 				    (610, 836))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$2" @158
-				Parent_View 	@156
+			    (object RoleView "$UNNAMED$2" @154
+				Parent_View 	@152
 				location   	(59, 636)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5947E7D103A6"
-				client     	@156
-				supplier   	@155
+				client     	@152
+				supplier   	@151
 				vertices   	(list Points
 				    (437, 836)
 				    (265, 837))
 				line_style 	0)))
-		    (object UseCaseView "Use Case View::Stop game" @159
+		    (object UseCaseView "Use Case View::Stop game" @155
 			location   	(1225, 584)
 			font       	(object Font
 			    size       	10
@@ -3288,7 +3213,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@159
+			    Parent_View 	@155
 			    location   	(1225, 722)
 			    anchor_loc 	1
 			    nlines     	2
@@ -3300,7 +3225,7 @@
 			fill_color 	13434879
 			quidu      	"5949A725024B"
 			height     	118)
-		    (object UseCaseView "Use Case View::Pause game" @160
+		    (object UseCaseView "Use Case View::Pause game" @156
 			location   	(1259, 841)
 			font       	(object Font
 			    size       	10
@@ -3313,7 +3238,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@160
+			    Parent_View 	@156
 			    location   	(1259, 979)
 			    anchor_loc 	1
 			    nlines     	2
@@ -3325,7 +3250,7 @@
 			fill_color 	13434879
 			quidu      	"5949A72C02B0"
 			height     	118)
-		    (object UseCaseView "Use Case View::Start game" @161
+		    (object UseCaseView "Use Case View::Start game" @157
 			location   	(1234, 1128)
 			font       	(object Font
 			    size       	10
@@ -3338,7 +3263,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@161
+			    Parent_View 	@157
 			    location   	(1234, 1266)
 			    anchor_loc 	1
 			    nlines     	2
@@ -3350,7 +3275,7 @@
 			fill_color 	13434879
 			quidu      	"5949A7360224"
 			height     	118)
-		    (object UseCaseView "Use Case View::View statistic" @162
+		    (object UseCaseView "Use Case View::View statistic" @158
 			location   	(1256, 1437)
 			font       	(object Font
 			    size       	10
@@ -3363,7 +3288,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@162
+			    Parent_View 	@158
 			    location   	(1256, 1575)
 			    anchor_loc 	1
 			    nlines     	2
@@ -3375,42 +3300,42 @@
 			fill_color 	13434879
 			quidu      	"5949A73E0142"
 			height     	118)
-		    (object DependencyView "" @163
+		    (object DependencyView "" @159
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5949A74F02C3"
-			client     	@154
-			supplier   	@159
+			client     	@150
+			supplier   	@155
 			vertices   	(list Points
 			    (825, 782)
 			    (1115, 637))
 			line_style 	0)
-		    (object DependencyView "" @164
+		    (object DependencyView "" @160
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5949A752006A"
-			client     	@154
-			supplier   	@160
+			client     	@150
+			supplier   	@156
 			vertices   	(list Points
 			    (830, 839)
 			    (1147, 839))
 			line_style 	0)
-		    (object DependencyView "" @165
+		    (object DependencyView "" @161
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5949A7540339"
-			client     	@154
-			supplier   	@161
+			client     	@150
+			supplier   	@157
 			vertices   	(list Points
 			    (846, 909)
 			    (1133, 1070))
 			line_style 	0)
-		    (object DependencyView "" @166
+		    (object DependencyView "" @162
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5949A75702EF"
-			client     	@154
-			supplier   	@162
+			client     	@150
+			supplier   	@158
 			vertices   	(list Points
 			    (846, 978)
 			    (1202, 1378))

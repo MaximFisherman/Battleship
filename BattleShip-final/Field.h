@@ -17,7 +17,7 @@ public:
 		srand(static_cast<unsigned>(time(0)));
 	};
 
-	bool  ship_is_good(
+	bool  SHIP_IS_GOOD(
 		int         size,
 		bool        is_horiz,
 		int         row_top,
@@ -25,9 +25,9 @@ public:
 		char  field[][FIELD_DIM]
 	);
 
-	void  set_ship_with_size(int  size, char  field[][FIELD_DIM]);
-	void  set_ships(char field[][FIELD_DIM]);
-	void  set_water(char field[][FIELD_DIM]);
+	void  setShipWithSize(int  size, char  field[][FIELD_DIM]);
+	void  setShips(char field[][FIELD_DIM]);
+	void  setWater(char field[][FIELD_DIM]);
 
 	int* print_field(char field[][FIELD_DIM]);
 	int* getFourDeckShip();

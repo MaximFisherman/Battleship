@@ -2,7 +2,7 @@
 
 #include "stdafx.h"
 
-class Game_logic : public Field, public Context {
+class GameLogic : public Field, public Context {
 private:
 	static const char WATER_SYMB = '0';
 	static const char SHIP_SYMB = '#';
@@ -17,8 +17,8 @@ protected:
 
 
 public:
-	Game_logic() {};
-	~Game_logic() {};
+	GameLogic() {};
+	~GameLogic() {};
 	void useStrategy();
 	void setStrategy(Strategy* o);
 

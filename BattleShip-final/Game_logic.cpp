@@ -2,17 +2,17 @@
 #include "Global_variables.h"
 
 using namespace std;
-void Game_logic::useStrategy() {
+void GameLogic::useStrategy() {
 	operation->use(x,y);
 };
 
-void Game_logic::setStrategy(Strategy* strategy) {
+void GameLogic::setStrategy(Strategy* strategy) {
 	operation = strategy;
 };
 
-void Game_logic::Field_user_mapping() {
-	set_water(Field_user);
-	set_ships(Field_user);
+void GameLogic::Field_user_mapping() {
+	setWater(Field_user);
+	setShips(Field_user);
 	int* temp_mas = print_field(Field_user);
 
 	//Convert to 2d array 
@@ -25,9 +25,9 @@ void Game_logic::Field_user_mapping() {
 	}
 };
 
-void Game_logic::Field_computer_mapping() {
-	set_water(Field_computer);
-	set_ships(Field_computer);
+void GameLogic::Field_computer_mapping() {
+	setWater(Field_computer);
+	setShips(Field_computer);
 	int* temp_mas = print_field(Field_computer);
 
 	//Convert to 2d array 
@@ -40,23 +40,23 @@ void Game_logic::Field_computer_mapping() {
 	}
 };
 
-bool Game_logic::Check_victory() {
+bool GameLogic::Check_victory() {
 	int flag = 0;
-	int human_flag = 0;
-	int computer_flag = 0;
+	int humanFlag = 0;
+	int computerFlag = 0;
 	for (int i = 0; i<10; i++)
 	{
 		for (int j = 0; j<10; j++)
 		{
 			if (Field_user[i][j] == '#')
-				human_flag = 1; // у пользователя ещё остались неповреждённые корабли
+				humanFlag = 1; // у пользователя ещё остались неповреждённые корабли
 			if (Field_computer[i][j] == '#')
-				computer_flag = 1; // у компьютера ещё остались неповреждённые корабли
+				computerFlag = 1; // у компьютера ещё остались неповреждённые корабли
 		}
 	}
-	if (human_flag == 0)
+	if (humanFlag == 0)
 		flag = 2;
-	if (computer_flag == 0)
+	if (computerFlag == 0)
 		flag = 1;
 	if (flag == 1)
 	{
@@ -72,7 +72,7 @@ bool Game_logic::Check_victory() {
 }
 
 //Move computer
-bool Game_logic::Move_computer() {
+bool GameLogic::Move_computer() {
 	bool attak = 0;
 
 	while (attak == 0)
@@ -86,6 +86,7 @@ bool Game_logic::Move_computer() {
 			Field_user[y_temp][x_temp] = '*';
 			break;
 		}
+
 		if (Field_user[y_temp][x_temp] == '#') {
 			Field_user[y_temp][x_temp] = 'X';
 			bool attak_ship = 1;
@@ -107,7 +108,7 @@ bool Game_logic::Move_computer() {
 	return true;
 };
 //Move players
-bool Game_logic::Move_user(int Ux, int Uy) {
+bool GameLogic::Move_user(int Ux, int Uy) {
 
 	HitSpace hit_space;
 	HitShip hit_ship;
@@ -137,7 +138,7 @@ bool Game_logic::Move_user(int Ux, int Uy) {
 		return false;
 };
 
-void Game_logic::View_field_computer() {
+void GameLogic::View_field_computer() {
 	for (int i = 0; i < SIZE_FIELD; ++i) {
 		for (int j = 0; j < SIZE_FIELD; ++j) {
 			cout << Field_computer[i][j] << " ";
@@ -146,7 +147,7 @@ void Game_logic::View_field_computer() {
 	}
 };
 
-void Game_logic::View_field_user() {
+void GameLogic::View_field_user() {
 	for (int i = 0; i < SIZE_FIELD; ++i) {
 		for (int j = 0; j < SIZE_FIELD; j++) {
 			cout << Field_user[i][j] << " ";

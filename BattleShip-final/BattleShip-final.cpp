@@ -6,13 +6,13 @@
 
 using namespace std;
 
-class Game :public Game_logic {
+class Game :public GameLogic {
 private:
 	bool exit = false; //Variable to check exit from the program
 	char act[10]; //Variable that carries the player's action
 
 public:
-	bool Check_exit(char* act);//Method for check "Stop" or "Start" game
+	bool CheckExit(char* act);//Method for check "Stop" or "Start" game
 	void Start_game();
 	void Timer();
 
@@ -25,7 +25,7 @@ int main()
 	return 0;
 }
 
-bool Game::Check_exit(char* act) {
+bool Game::CheckExit(char* act) {
 	if (strcmp(act, "stop"))
 		return false;
 	else
@@ -46,7 +46,7 @@ void Game::Start_game()
 	int Ux = 0, Uy = 0;
 	int command_pause = 0;
 
-	Game_logic game_logic;
+	GameLogic gameLogic;
 	
 	//Main loop program
 	while (true){
@@ -56,23 +56,23 @@ void Game::Start_game()
 			cin >> act;
 		}
 
-		if (Check_exit(act) == 1&&count==0){
+		if (CheckExit(act) == 1&&count==0){
 			break;
 		}
 
 		//Create field players
 		if (count == 0) {
-			game_logic.Field_user_mapping();//initialization Field user
-			game_logic.Field_computer_mapping();//initialization Field computer
+			gameLogic.Field_user_mapping();//initialization Field user
+			gameLogic.Field_computer_mapping();//initialization Field computer
 		}
 
 		system("cls"); //Clear window
 
 		cout << "Your field:" << endl;
-		game_logic.View_field_user();
+		gameLogic.View_field_user();
 
 		cout << endl << "Your opponent's field" << endl;
-		game_logic.View_field_computer();
+		gameLogic.View_field_computer();
 
 		//Pause
 			cout << "input command move 1 or pause 2: ";
@@ -85,31 +85,31 @@ void Game::Start_game()
 		}
 			system("cls");
 			cout << "Your field:" << endl;
-			game_logic.View_field_user();
+			gameLogic.View_field_user();
 
 			cout << endl << "Your opponent's field" << endl;
-			game_logic.View_field_computer();
+			gameLogic.View_field_computer();
 
 			cout << "input coordinate x and y: " << endl;
 			cin >> Ux >> Uy;
 		
 		system("cls"); //Clear window
-		if (game_logic.Move_user(Ux, Uy) == 1) {	//Move user, if user finish move, start move computer  		
-			game_logic.Move_computer();
+		if (gameLogic.Move_user(Ux-1, Uy-1) == 1) {	//Move user, if user finish move, start move computer  		
+			gameLogic.Move_computer();
 		}
 		count++;
 
 		//Check Victory
-		if (game_logic.Check_victory()==1) {
+		if (gameLogic.Check_victory()==1) {
 			system("cls");
 			
-			game_logic.Check_victory();
+			gameLogic.Check_victory();
 
 			cout << "Your field:" << endl;
-			game_logic.View_field_user();
+			gameLogic.View_field_user();
 
 			cout << endl << "Your opponent's field" << endl;
-			game_logic.View_field_computer();
+			gameLogic.View_field_computer();
 			count = 0;
 		}
 	}
