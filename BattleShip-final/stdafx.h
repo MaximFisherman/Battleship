@@ -27,6 +27,6 @@
 #include "Strategy.h"
 #include "Context.h"
 #include "Field.h"
-#include "Game_logic.h"
+#include "GameLogic.h"
 #include "Fire.h"
 
